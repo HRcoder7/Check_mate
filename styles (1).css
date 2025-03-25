@@ -1,0 +1,272 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-button {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Gradient Colors for Section Buttons */
+.section-button:nth-child(1) {
+    background: linear-gradient(45deg, #ff6f61, #ff9a8b); /* Coral to Peach */
+}
+.section-button:nth-child(2) {
+    background: linear-gradient(45deg, #6b48ff, #a18aff); /* Purple to Light Purple */
+}
+.section-button:nth-child(3) {
+    background: linear-gradient(45deg, #00c4cc, #36e4da); /* Cyan to Teal */
+}
+.section-button:nth-child(4) {
+    background: linear-gradient(45deg, #ff2e63, #ff6f91); /* Pink to Light Pink */
+}
+.section-button:nth-child(5) {
+    background: linear-gradient(45deg, #00ddeb, #61f5c0); /* Sky Blue to Mint */
+}
+
+/* Neon Effect for Section Buttons */
+.section-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Glowing Border Effect for Section Buttons */
+.section-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+/* Subsection List Styling */
+.subsection-list {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.subsection-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.subsection-button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+}
+
+/* Gradient Colors for Subsection Buttons */
+.subsection-button:nth-child(1) {
+    background: linear-gradient(45deg, #ff6f61, #ff9a8b); /* Coral to Peach */
+}
+.subsection-button:nth-child(2) {
+    background: linear-gradient(45deg, #6b48ff, #a18aff); /* Purple to Light Purple */
+}
+.subsection-button:nth-child(3) {
+    background: linear-gradient(45deg, #00c4cc, #36e4da); /* Cyan to Teal */
+}
+.subsection-button:nth-child(4) {
+    background: linear-gradient(45deg, #ff2e63, #ff6f91); /* Pink to Light Pink */
+}
+
+/* Neon Effect for Subsection Buttons */
+.subsection-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Glowing Border Effect for Subsection Buttons */
+.subsection-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+/* Chapter List Styling */
+.chapter-list {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.chapter-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.chapter-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chapter-list li {
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+/* Style the <a> inside <li> to look like a button */
+.chapter-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 1.1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Colors for Chapter Links */
+.chapter-list li:nth-child(1) .chapter-link {
+    background: linear-gradient(45deg, #ff6f61, #ff9a8b); /* Coral to Peach */
+}
+.chapter-list li:nth-child(2) .chapter-link {
+    background: linear-gradient(45deg, #6b48ff, #a18aff); /* Purple to Light Purple */
+}
+.chapter-list li:nth-child(3) .chapter-link {
+    background: linear-gradient(45deg, #00c4cc, #36e4da); /* Cyan to Teal */
+}
+
+/* Neon Effect for Chapter Links */
+.chapter-list li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Glowing Border Effect for Chapter Links */
+.chapter-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.pdf-icon {
+    font-size: 1.2rem;
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ff6f61, #ff9a8b);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* PDF Viewer Styling */
+.pdf-viewer {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.pdf-viewer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.pdf-viewer iframe {
+    border: none;
+    border-radius: 8px;
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <h1 class="title">What Would You Like to Study?</h1>
+        <div class="sections" id="sections">
+            <button class="section-button" onclick="showSubsections('ncert-book')">
+                <span class="icon">📚</span> NCERT Book
+            </button>
+            <button class="section-button" onclick="showSubsections('ncert-exemplar')">
+                <span class="icon">📚</span> NCERT Exemplar
+            </button>
+            <button class="section-button" onclick="showSubsections('neet-pyq')">
+                <span class="icon">📚</span> NEET PYQ
+            </button>
+            <button class="section-button" onclick="showSubsections('top-mcq')">
+                <span class="icon">📚</span> Top MCQ
+            </button>
+            <button class="section-button" onclick="showSubsections('short-notes')">
+                <span class="icon">📚</span> Short Notes
+            </button>
+        </div>
+
+        <!-- Subsections for each section -->
+        <!-- NCERT Book Subsections -->
+        <div class="subsection-list" id="ncert-book-subsections" style="display: none;">
+            <h2>NCERT Book</h2>
+            <button class="subsection-button" onclick="showChapters('ncert-book-physics')">Physics</button>
+            <button class="subsection-button" onclick="showChapters('ncert-book-chemistry')">Chemistry</button>
+            <button class="subsection-button" onclick="showChapters('ncert-book-botany')">Botany</button>
+            <button class="subsection-button" onclick="showChapters('ncert-book-zoology')">Zoology</button>
+            <button class="back-button" onclick="goBackToSections()">Back</button>
+        </div>
+
+        <!-- NCERT Exemplar Subsections -->
+        <div class="subsection-list" id="ncert-exemplar-subsections" style="display: none;">
+            <h2>NCERT Exemplar</h2>
+            <button class="subsection-button" onclick="showChapters('ncert-exemplar-physics')">Physics</button>
+            <button class="subsection-button" onclick="showChapters('ncert-exemplar-chemistry')">Chemistry</button>
+            <button class="subsection-button" onclick="showChapters('ncert-exemplar-botany')">Botany</button>
+            <button class="subsection-button" onclick="showChapters('ncert-exemplar-zoology')">Zoology</button>
+            <button class="back-button" onclick="goBackToSections()">Back</button>
+        </div>
+
+        <!-- NEET PYQ Subsections -->
+        <div class="subsection-list" id="neet-pyq-subsections" style="display: none;">
+            <h2>NEET PYQ</h2>
+            <button class="subsection-button" onclick="showChapters('neet-pyq-physics')">Physics</button>
+            <button class="subsection-button" onclick="showChapters('neet-pyq-chemistry')">Chemistry</button>
+            <button class="subsection-button" onclick="showChapters('neet-pyq-botany')">Botany</button>
+            <button class="subsection-button" onclick="showChapters('neet-pyq-zoology')">Zoology</button>
+            <button class="back-button" onclick="goBackToSections()">Back</button>
+        </div>
+
+        <!-- Top MCQ Subsections -->
+        <div class="subsection-list" id="top-mcq-subsections" style="display: none;">
+            <h2>Top MCQ</h2>
+            <button class="subsection-button" onclick="showChapters('top-mcq-physics')">Physics</button>
+            <button class="subsection-button" onclick="showChapters('top-mcq-chemistry')">Chemistry</button>
+            <button class="subsection-button" onclick="showChapters('top-mcq-botany')">Botany</button>
+            <button class="subsection-button" onclick="showChapters('top-mcq-zoology')">Zoology</button>
+            <button class="back-button" onclick="goBackToSections()">Back</button>
+        </div>
+
+        <!-- Short Notes Subsections -->
+        <div class="subsection-list" id="short-notes-subsections" style="display: none;">
+            <h2>Short Notes</h2>
+            <button class="subsection-button" onclick="showChapters('short-notes-physics')">Physics</button>
+            <button class="subsection-button" onclick="showChapters('short-notes-chemistry')">Chemistry</button>
+            <button class="subsection-button" onclick="showChapters('short-notes-botany')">Botany</button>
+            <button class="subsection-button" onclick="showChapters('short-notes-zoology')">Zoology</button>
+            <button class="back-button" onclick="goBackToSections()">Back</button>
+        </div>
+
+        <!-- Chapter Lists for each subsection -->
+        <!-- NCERT Book Chapters -->
+        <div class="chapter-list" id="ncert-book-physics" style="display: none;">
+            <h2>NCERT Book - Physics</h2>
+            <ul>
+                <li><a href="ncert-book-physics-chapter1.pdf" class="chapter-link">Chapter 1: Mechanics <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-physics-chapter2.pdf" class="chapter-link">Chapter 2: Thermodynamics <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-physics-chapter3.pdf" class="chapter-link">Chapter 3: Electromagnetism <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-book')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-book-chemistry" style="display: none;">
+            <h2>NCERT Book - Chemistry</h2>
+            <ul>
+                <li><a href="pdfs/ncert-book-chemistry-chapter1.pdf" class="chapter-link">Chapter 1: Organic Chemistry <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-chemistry-chapter2.pdf" class="chapter-link">Chapter 2: Inorganic Chemistry <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-chemistry-chapter3.pdf" class="chapter-link">Chapter 3: Physical Chemistry <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-book')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-book-botany" style="display: none;">
+            <h2>NCERT Book - Botany</h2>
+            <ul>
+                <li><a href="pdfs/ncert-book-botany-chapter1.pdf" class="chapter-link">Chapter 1: Plant Anatomy <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-botany-chapter2.pdf" class="chapter-link">Chapter 2: Photosynthesis <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-botany-chapter3.pdf" class="chapter-link">Chapter 3: Plant Reproduction <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-book')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-book-zoology" style="display: none;">
+            <h2>NCERT Book - Zoology</h2>
+            <ul>
+                <li><a href="pdfs/ncert-book-zoology-chapter1.pdf" class="chapter-link">Chapter 1: Animal Diversity <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-zoology-chapter2.pdf" class="chapter-link">Chapter 2: Human Physiology <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-book-zoology-chapter3.pdf" class="chapter-link">Chapter 3: Genetics <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-book')">Back</button>
+        </div>
+
+        <!-- NCERT Exemplar Chapters -->
+        <div class="chapter-list" id="ncert-exemplar-physics" style="display: none;">
+            <h2>NCERT Exemplar - Physics</h2>
+            <ul>
+                <li><a href="pdfs/ncert-exemplar-physics-chapter1.pdf" class="chapter-link">Chapter 1: Mechanics Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-physics-chapter2.pdf" class="chapter-link">Chapter 2: Thermodynamics Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-physics-chapter3.pdf" class="chapter-link">Chapter 3: Electromagnetism Problems <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-exemplar')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-exemplar-chemistry" style="display: none;">
+            <h2>NCERT Exemplar - Chemistry</h2>
+            <ul>
+                <li><a href="pdfs/ncert-exemplar-chemistry-chapter1.pdf" class="chapter-link">Chapter 1: Organic Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-chemistry-chapter2.pdf" class="chapter-link">Chapter 2: Inorganic Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-chemistry-chapter3.pdf" class="chapter-link">Chapter 3: Physical Problems <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-exemplar')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-exemplar-botany" style="display: none;">
+            <h2>NCERT Exemplar - Botany</h2>
+            <ul>
+                <li><a href="pdfs/ncert-exemplar-botany-chapter1.pdf" class="chapter-link">Chapter 1: Plant Anatomy Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-botany-chapter2.pdf" class="chapter-link">Chapter 2: Photosynthesis Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-botany-chapter3.pdf" class="chapter-link">Chapter 3: Plant Reproduction Problems <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-exemplar')">Back</button>
+        </div>
+        <div class="chapter-list" id="ncert-exemplar-zoology" style="display: none;">
+            <h2>NCERT Exemplar - Zoology</h2>
+            <ul>
+                <li><a href="pdfs/ncert-exemplar-zoology-chapter1.pdf" class="chapter-link">Chapter 1: Animal Diversity Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-zoology-chapter2.pdf" class="chapter-link">Chapter 2: Human Physiology Problems <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/ncert-exemplar-zoology-chapter3.pdf" class="chapter-link">Chapter 3: Genetics Problems <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('ncert-exemplar')">Back</button>
+        </div>
+
+        <!-- NEET PYQ Chapters -->
+        <div class="chapter-list" id="neet-pyq-physics" style="display: none;">
+            <h2>NEET PYQ - Physics</h2>
+            <ul>
+                <li><a href="pdfs/neet-pyq-physics-2019.pdf" class="chapter-link">2019 Physics Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-physics-2020.pdf" class="chapter-link">2020 Physics Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-physics-2021.pdf" class="chapter-link">2021 Physics Paper <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('neet-pyq')">Back</button>
+        </div>
+        <div class="chapter-list" id="neet-pyq-chemistry" style="display: none;">
+            <h2>NEET PYQ - Chemistry</h2>
+            <ul>
+                <li><a href="pdfs/neet-pyq-chemistry-2019.pdf" class="chapter-link">2019 Chemistry Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-chemistry-2020.pdf" class="chapter-link">2020 Chemistry Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-chemistry-2021.pdf" class="chapter-link">2021 Chemistry Paper <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('neet-pyq')">Back</button>
+        </div>
+        <div class="chapter-list" id="neet-pyq-botany" style="display: none;">
+            <h2>NEET PYQ - Botany</h2>
+            <ul>
+                <li><a href="pdfs/neet-pyq-botany-2019.pdf" class="chapter-link">2019 Botany Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-botany-2020.pdf" class="chapter-link">2020 Botany Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-botany-2021.pdf" class="chapter-link">2021 Botany Paper <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('neet-pyq')">Back</button>
+        </div>
+        <div class="chapter-list" id="neet-pyq-zoology" style="display: none;">
+            <h2>NEET PYQ - Zoology</h2>
+            <ul>
+                <li><a href="pdfs/neet-pyq-zoology-2019.pdf" class="chapter-link">2019 Zoology Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-zoology-2020.pdf" class="chapter-link">2020 Zoology Paper <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/neet-pyq-zoology-2021.pdf" class="chapter-link">2021 Zoology Paper <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('neet-pyq')">Back</button>
+        </div>
+
+        <!-- Top MCQ Chapters -->
+        <div class="chapter-list" id="top-mcq-physics" style="display: none;">
+            <h2>Top MCQ - Physics</h2>
+            <ul>
+                <li><a href="pdfs/top-mcq-physics-mechanics.pdf" class="chapter-link">Mechanics MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-physics-thermodynamics.pdf" class="chapter-link">Thermodynamics MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-physics-electromagnetism.pdf" class="chapter-link">Electromagnetism MCQs <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('top-mcq')">Back</button>
+        </div>
+        <div class="chapter-list" id="top-mcq-chemistry" style="display: none;">
+            <h2>Top MCQ - Chemistry</h2>
+            <ul>
+                <li><a href="pdfs/top-mcq-chemistry-organic.pdf" class="chapter-link">Organic MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-chemistry-inorganic.pdf" class="chapter-link">Inorganic MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-chemistry-physical.pdf" class="chapter-link">Physical MCQs <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('top-mcq')">Back</button>
+        </div>
+        <div class="chapter-list" id="top-mcq-botany" style="display: none;">
+            <h2>Top MCQ - Botany</h2>
+            <ul>
+                <li><a href="pdfs/top-mcq-botany-plant-anatomy.pdf" class="chapter-link">Plant Anatomy MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-botany-photosynthesis.pdf" class="chapter-link">Photosynthesis MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-botany-plant-reproduction.pdf" class="chapter-link">Plant Reproduction MCQs <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('top-mcq')">Back</button>
+        </div>
+        <div class="chapter-list" id="top-mcq-zoology" style="display: none;">
+            <h2>Top MCQ - Zoology</h2>
+            <ul>
+                <li><a href="pdfs/top-mcq-zoology-animal-diversity.pdf" class="chapter-link">Animal Diversity MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-zoology-human-physiology.pdf" class="chapter-link">Human Physiology MCQs <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/top-mcq-zoology-genetics.pdf" class="chapter-link">Genetics MCQs <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('top-mcq')">Back</button>
+        </div>
+
+        <!-- Short Notes Chapters -->
+        <div class="chapter-list" id="short-notes-physics" style="display: none;">
+            <h2>Short Notes - Physics</h2>
+            <ul>
+                <li><a href="pdfs/short-notes-physics-mechanics.pdf" class="chapter-link">Mechanics Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-physics-thermodynamics.pdf" class="chapter-link">Thermodynamics Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-physics-electromagnetism.pdf" class="chapter-link">Electromagnetism Notes <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('short-notes')">Back</button>
+        </div>
+        <div class="chapter-list" id="short-notes-chemistry" style="display: none;">
+            <h2>Short Notes - Chemistry</h2>
+            <ul>
+                <li><a href="pdfs/short-notes-chemistry-organic.pdf" class="chapter-link">Organic Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-chemistry-inorganic.pdf" class="chapter-link">Inorganic Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-chemistry-physical.pdf" class="chapter-link">Physical Notes <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('short-notes')">Back</button>
+        </div>
+        <div class="chapter-list" id="short-notes-botany" style="display: none;">
+            <h2>Short Notes - Botany</h2>
+            <ul>
+                <li><a href="pdfs/short-notes-botany-plant-anatomy.pdf" class="chapter-link">Plant Anatomy Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-botany-photosynthesis.pdf" class="chapter-link">Photosynthesis Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-botany-plant-reproduction.pdf" class="chapter-link">Plant Reproduction Notes <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('short-notes')">Back</button>
+        </div>
+        <div class="chapter-list" id="short-notes-zoology" style="display: none;">
+            <h2>Short Notes - Zoology</h2>
+            <ul>
+                <li><a href="pdfs/short-notes-zoology-animal-diversity.pdf" class="chapter-link">Animal Diversity Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-zoology-human-physiology.pdf" class="chapter-link">Human Physiology Notes <span class="pdf-icon">📄</span></a></li>
+                <li><a href="pdfs/short-notes-zoology-genetics.pdf" class="chapter-link">Genetics Notes <span class="pdf-icon">📄</span></a></li>
+            </ul>
+            <button class="back-button" onclick="goBackToSubsections('short-notes')">Back</button>
+        </div>
+
+        <!-- PDF Viewer -->
+        <div class="pdf-viewer" id="pdf-viewer" style="display: none;">
+            <h2>PDF Viewer</h2>
+            <iframe id="pdf-iframe" width="100%" height="500px"></iframe>
+            <button class="back-button" onclick="closePdfViewer()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
